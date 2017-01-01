@@ -112,10 +112,6 @@ Hands on exercises
 
 Run and check the code coverage. Comment-out the other test and check how coverage changes.
 
-#### 1.2. Fixing the code coverage
-Check what isn't covered in the *users* service
-and add a test for the missing functionality to increase the coverage. It is good to write tests for everything you do.
-
 ### 2. Database and models
 
 #### 2.1. Fix the test data sets
