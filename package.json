@@ -1,5 +1,5 @@
 {
-  "name": "es2017-sequelize-demo",
+  "name": "taamicroservices",
   "version": "1.0.0",
   "description": "The project used for Docker and Microservices workshop",
   "main": "services/users/index.js",
@@ -12,15 +12,15 @@
     "db": "NODE_ENV=development scripts/setup-db.sh",
     "resetdb": "NODE_ENV=development babel-node scripts/initdb.es6",
     "resetlocaldb": "NODE_ENV=local babel-node scripts/initdb.es6",
-    "containers": "docker-compose -p $C9_USER up -d && echo Click here to load an example endpoint: http://$C9_USER-users.apps.containercluster.net/users/user1",
+    "containers": "docker-compose -p $C9_USER up -d && echo Click here to load an example endpoint: http://localhost/users/user1",
     "stop": "docker-compose -p $C9_USER down",
     "scale": "docker-compose -p $C9_USER scale"
   },
   "author": "Ilkka Anttonen",
   "license": "ISC",
   "dependencies": {
-    "mysql": "^2.11.1",
-    "sequelize": "^3.24.6"
+    "mysql": "^2.13.0",
+    "sequelize": "^3.30.2"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
