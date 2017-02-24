@@ -10,7 +10,7 @@ Use following information to build your dockerized cloud IDE:
 
 | Field        	| Required value |
 | ------------- 	|:-------------:| 
-| Project Name  	| taamicroservices |
+| Workspace Name  	| taamicroservices |
 | Team      		| Accenture TechArch Academy      | 
 | Type 			| Hosted workspace    	|
 | Privacy			| Public |
@@ -53,7 +53,7 @@ npm run resetdb
 Also a tool like [Sequel Pro](https://www.sequelpro.com/) or [SQLSquirrel](http://squirrel-sql.sourceforge.net/) can be used to connect to the database. The userid
 and password can be found from *config/sequelize.json*.
 
-Starting the example application
+Application commands
 ---------------------------------
 The example application can be started with
 
@@ -65,9 +65,23 @@ Now you will see on the console that [restify](http://restify.com/) is listening
 It is good to know that only ports 8080, 8081 and 8082 are open in Cloud9 environments.
 
 These applications will be hosted at 
-```
-<project_name>-<C9_username>.c9users.io
-```
+
+~~~
+<workspacename>-<C9_username>.c9users.io
+~~~
+
+Clicking localhost:8080 link on the console will open that URL on another tab.
+
+If you have run ```npm run db``` the 
+
+~~~
+<workspacename>-<C9_username>.c9users.io/users/user1
+~~~
+should return the test user1 information as JSON.
+
+Stop the software with ```ctrl+c``` in the same console or by writing```npm stop``` in another console.
+
+New consoles can be created with **ALT+T**.
 
 
 Running tests
@@ -87,33 +101,52 @@ npm run coverage
 ~~~
 
 After that the reports can be found from under *coverage/lcov-report* folder,
-open the *index.html* with an integrated C9 browser/preview.
+open the *index.html* with an integrated C9 "Preview" -browser ```right-click the html-file + select 'Preview'```.
 
 Hands on exercises
 ----------------------
 
 ### 1. Code coverage
 
-Run and check the code coverage. Check what isn't covered in the *users* service
-and add a test for the missing functionality to increase the coverage.
+#### 1.1. Checking the code coverage
 
-### 2. New field in the database
+Run and check the code coverage. Comment-out the other test and check how coverage changes.
 
-During the exercise a new field is introduced into the database. Add the field
-to the model and ensure that the information is correctly relayed to the caller.
+#### 1.2. Fixing the code coverage
+Check what isn't covered in the *users* service
+and add a test for the missing functionality to increase the coverage. It is good to write tests for everything you do.
 
-### 3. Implement a new endpoint
+### 2. Database and models
 
-A new requirement from the client arrives: they need to be able to query
-users based on the first name. Add a new endpoint and its functionality. Don't forget the tests!
+#### 2.1. Fix the test data sets
+Data model seems to be supporting a field that is not in the test data. Please create the missing test data for all test users.
 
-## **Good luck and ask for help if you get stuck! 🙂**
+#### 2.2. Expand the data model
+Specifications change during an agile development cycle. Client requires information about customers' eye-color for targeted marketing. Expand the data model and create required test data.
 
+### 3. Endpoints and APIs
+
+#### 3.1. Insert users 
+A new requirement from the client arrives: they need to be able to create new users through an HTTP-API.
+
+You can HTTP POST with [cURL](https://en.wikipedia.org/wiki/CURL) to example.org like:
+
+~~~bash
+curl --header "header stuff" --data 'data stuff' http://www.example.org
+~~~
+It might be helpful to check cURL capabilities by typing
+```man curl```
+in your terminal.
+
+#### 3.2. Ask staff
+
+ **Good luck and ask for help if you get stuck! 🙂**
 -------------------------------------------
---------------------------------
+-------------------------------------------------------------
+------------------------------------------------------------
 
 
-Hungry for more? Maybe you should give this file a closer look...
+*Hungry for more? Maybe you should give this file a closer look...*
 
 <!--
 ##OPTIONAL 
@@ -128,7 +161,7 @@ at `https://github.com/SirIle/es2017-sequelize-demo`.
 To initialize the Cloud9 workspace use the console to run
 
 ~~~bash
-scripts/initddc.sh
+scripts/init.sh
 ~~~
 
 The script will ask for a password when it's decrypting the Docker Datacenter
