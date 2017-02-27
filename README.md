@@ -79,7 +79,7 @@ If you have run ```npm run db``` the
 ~~~
 should return the test user1 information as JSON.
 
-Stop the software with ```ctrl+c``` in the same console or by writing```npm stop``` in another console.
+Stop the software with ```ctrl+c``` in the same console.
 
 New consoles can be created with **ALT+T**.
 
