@@ -132,7 +132,7 @@ A new requirement from the client arrives: they need to be able to create new us
 You can HTTP POST with [cURL](https://en.wikipedia.org/wiki/CURL) to example.org like:
 
 ~~~bash
-curl --header "header stuff" --data 'data stuff' http://www.example.org
+curl -X POST --header "Content-Type: application/json" --data 'data stuff' http://www.example.org
 ~~~
 It might be helpful to check cURL capabilities by typing
 ```man curl```
