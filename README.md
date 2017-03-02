@@ -126,7 +126,10 @@ Specifications change during an agile development cycle. Client requires informa
 
 ### 3. Endpoints and APIs
 
-#### 3.1. Insert users 
+#### 3.1. Create a new endpoint 
+The client would like to be able to query users by their firstname. Add a new endpoint and required functionality. *Don't forget the tests.*
+
+#### 3.2. Insert users
 A new requirement from the client arrives: they need to be able to create new users through an HTTP-API.
 
 You can HTTP POST with [cURL](https://en.wikipedia.org/wiki/CURL) to example.org like:
@@ -137,8 +140,6 @@ curl -X POST --header "Content-Type: application/json" --data 'data stuff' http:
 It might be helpful to check cURL capabilities by typing
 ```man curl```
 in your terminal.
-
-#### 3.2. Ask staff
 
  **Good luck and ask for help if you get stuck! 🙂**
 -------------------------------------------
